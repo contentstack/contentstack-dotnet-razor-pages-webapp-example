@@ -11,7 +11,7 @@
         <div class="col-md-4 col-sm-6 col-xs-12 women-dresses">
             <div class="women-grids wp1 animated wow slideInUp product-item" data-wow-delay=".5s">
                 <div class="product-img">
-                    <img src="@product.FeaturedImage[0].Url" alt="" />
+                    <img class="image-product"src="@product.FeaturedImage[0].Url" alt="" />
                 </div>
                 <h4>@product.Title</h4>
                 <h5>﹩ @product.Price</h5>
@@ -20,10 +20,21 @@
     </a>
 }
 
-<div class="pagination">
+@if (Model.contentstackCollection.Items.Count() > 6)
+{
+    <div class="pagination">
+        @if (Model.ShowPrevious)
+        {
 
-    <a asp-page="./Index" asp-route-currentpage="@(Model.CurrentPage -1)" class="prev">Previous</a>
+            <a asp-page="./Index" asp-route-currentpage="@(Model.CurrentPage -1)" class="prev">Previous</a>
 
+        }
+        @if ((Model.contentstackCollection.Items.Count() / 6 + 1) > Model.CurrentPage)
+        {
 
-    <a asp-page="./Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="next">Next</a>
-</div>
+            <a asp-page="./Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="next">Next</a>
+
+        }
+    </div>
+
+}
