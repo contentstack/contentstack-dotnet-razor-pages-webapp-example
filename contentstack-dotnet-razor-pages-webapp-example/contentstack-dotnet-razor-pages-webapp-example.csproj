@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>contentstack_dotnet_razor_pages_webapp_example</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="contentstack.csharp" Version="2.4.0" />
+    <PackageReference Include="contentstack.aspnetcore" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="Pages\Products\" />
+  </ItemGroup>
+</Project>
