@@ -151,7 +151,7 @@ body {
     font-size: 10px;
 }
 
-.top-product-grids h4, .women-grids h4 {
+.top-product-grids h4, .product-grids h4 {
     font-size: 18px;
     color: #484848;
     margin: 10px 0;
@@ -165,13 +165,13 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
 }
 
-.women-grids h4 {
+.product-grids h4 {
     font-size: 18px;
     color: #484848;
     margin: 10px 0;
 }
 
-.women-grids h4 {
+.product-grids h4 {
     height: auto;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 24px;
 }
 
-.women-grids h5 {
+.product-grids h5 {
     font-size: 18px;
     font-weight: 700;
 }
