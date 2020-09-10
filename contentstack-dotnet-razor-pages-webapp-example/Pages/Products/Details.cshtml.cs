@@ -1,39 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Contentstack.Core;
-using Contentstack.Core.Internals;
-using ContentstackModels.Models;
+using ContentstackRazorPagesExample.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace contentstack_dotnet_razor_pages_webapp_example.Pages.Products
+namespace ContentstackRazorPagesExample.Pages.Products
 {
     public class DetailsModel : PageModel
     {
-        private readonly String _contentType = "product";
-        private readonly ContentstackClient _contentstackClient;
+        private readonly ContentstackClient _client;
 
         [BindProperty]
         public Product Product { get; set; }
 
-        public DetailsModel(ContentstackClient contentstackClient)
+        public DetailsModel(ContentstackClient client)
         {
-            _contentstackClient = contentstackClient;
+            _client = client;
         }
 
-        public async Task OnGetAsync(string productuid)
+        public async Task OnGetAsync(string uid)
         {
-            try
-            {
-                Product = await _contentstackClient.ContentType(_contentType)
-                            .Entry(productuid)
-                            .Fetch<Product>();
-            } catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            Product = await _client.ContentType(Product.ContentType)
+                .Entry(uid)
+                .Fetch<Product>();
+
+            ViewData["Title"] = Product.Title;
         }
     }
 }

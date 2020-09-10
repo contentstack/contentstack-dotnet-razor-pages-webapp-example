@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Contentstack.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Contentstack.AspNetCore;
 
-namespace contentstack_dotnet_razor_pages_webapp_example
+namespace ContentstackRazorPagesExample
 {
     public class Startup
     {
@@ -25,8 +20,8 @@ namespace contentstack_dotnet_razor_pages_webapp_example
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddContentstack(Configuration);
-            services.AddRazorPages().AddRazorPagesOptions((obj) =>
-                obj.Conventions.AddPageRoute("/Products/Index", "")
+            services.AddRazorPages().AddRazorPagesOptions(options =>
+                options.Conventions.AddPageRoute("/Products/Index", "")
             );
         }
 
@@ -46,9 +41,7 @@ namespace contentstack_dotnet_razor_pages_webapp_example
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
