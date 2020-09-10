@@ -1,15 +1,8 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Contentstack.Core.Models;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 
-
-namespace ContentstackModels.Models
+namespace ContentstackRazorPagesExample.Models
 {
     public partial class Product
     {
@@ -23,4 +16,3 @@ namespace ContentstackModels.Models
         public double Price { get; set; }
     }
 }
-

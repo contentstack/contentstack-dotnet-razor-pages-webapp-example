@@ -1,40 +1,31 @@
 ﻿@page
-@model contentstack_dotnet_razor_pages_webapp_example.Pages.Products.IndexModel
-@{
-}
+@model ContentstackRazorPagesExample.Pages.Products.IndexModel
 
-
-
-@foreach (ContentstackModels.Models.Product product in Model.contentstackCollection.Items)
+@foreach (var product in Model.Products.Items)
 {
-    <a asp-page="./Details" asp-route-productuid="@product.Uid">
-        <div class="col-md-4 col-sm-6 col-xs-12 women-dresses">
-            <div class="product-grids wp1 animated wow slideInUp product-item" data-wow-delay=".5s">
+    <a asp-page="./Details" asp-route-uid="@product.Uid">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="product-grids product-item" data-wow-delay=".5s">
                 <div class="product-img">
-                    <img class="image-product"src="@product.FeaturedImage[0].Url" alt="" />
+                    <img class="image-product" src="@product.FeaturedImage[0].Url" alt="" />
                 </div>
                 <h4>@product.Title</h4>
-                <h5>﹩ @product.Price</h5>
+                <h5>$@product.Price</h5>
             </div>
         </div>
     </a>
 }
 
-@if (Model.contentstackCollection.Items.Count() > 6)
+@if (Model.Products.Items.Count() > Model.Limit)
 {
     <div class="pagination">
         @if (Model.ShowPrevious)
         {
-
-            <a asp-page="./Index" asp-route-currentpage="@(Model.CurrentPage -1)" class="prev">Previous</a>
-
+            <a asp-page="./Index" asp-route-page="@(Model.CurrentPage - 1)" class="prev">Previous</a>
         }
-        @if ((Model.contentstackCollection.Items.Count() / 6 + 1) > Model.CurrentPage)
+        @if (Model.Products.Items.Count() / Model.Limit + 1 > Model.CurrentPage)
         {
-
-            <a asp-page="./Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="next">Next</a>
-
+            <a asp-page="./Index" asp-route-page="@(Model.CurrentPage + 1)" class="next">Next</a>
         }
     </div>
-
 }

@@ -1,34 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Contentstack.Core;
 using Contentstack.Core.Models;
-using ContentstackModels.Models;
+using ContentstackRazorPagesExample.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace contentstack_dotnet_razor_pages_webapp_example.Pages.Products
+namespace ContentstackRazorPagesExample.Pages.Products
 {
     public class IndexModel : PageModel
     {
-        private readonly String _contentType = "product";
-        private readonly ContentstackClient _contentstackClient;
-        [BindProperty]
-        public ContentstackCollection<Product> contentstackCollection { get; set; }
+        private readonly ContentstackClient _client;
+        
         public bool ShowPrevious => CurrentPage > 1;
         public int CurrentPage = 1;
         public readonly int Limit = 6;
 
-        public IndexModel(ContentstackClient contentstackClient)
+        [BindProperty]
+        public ContentstackCollection<Product> Products { get; set; }
+
+        public IndexModel(ContentstackClient client)
         {
-            _contentstackClient = contentstackClient;
+            _client = client;
         }
 
-        public async Task OnGetAsync(int currentpage = 1)
+        public async Task OnGetAsync(int page = 1)
         {
-            CurrentPage = currentpage;
-            contentstackCollection = await _contentstackClient.ContentType(_contentType)
+            ViewData["Title"] = "Home";
+
+            CurrentPage = page;
+
+            Products = await _client.ContentType(Product.ContentType)
                 .Query()
                 .IncludeCount()
                 .Limit(Limit)
