@@ -3,7 +3,7 @@
 ## About this Example
 Create a professional website using ASP.NET Razor Pages and Contentstack.
 
-![Homepage Screenshot](./Screenshots/product-catalog?raw=true "Homepage Screenshot")
+![Homepage Screenshot](Screenshots/product-catalog.png?raw=true "Homepage Screenshot")
 
 ## About Contentstack
 Contentstack is a headless CMS with an API-first approach that puts content at the center. It is designed to simplify the process of publication by separating code from content.
