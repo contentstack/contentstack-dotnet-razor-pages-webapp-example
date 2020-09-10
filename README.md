@@ -1,14 +1,11 @@
 [![Contentstack](https://www.contentstack.com/docs/static/images/contentstack.png)](https://www.contentstack.com/)
 
-# Create a Product Catalog using ASP.NET Core Razor Pages
+## About this Example
+Create a professional website using ASP.NET Razor Pages and Contentstack.
+![Homepage Screenshot](./product-catelog-image.png?raw=true "Homepage Screenshot")
 
 ## About Contentstack
 Contentstack is a headless CMS with an API-first approach that puts content at the center. It is designed to simplify the process of publication by separating code from content.
-
-## About this project
-Create a professional website using ASP.NET Razor Pages and Contentstack.
-
-![Homepage Screenshot](./product-catelog-image.png?raw=true "Homepage Screenshot")
 
 ## Perform the steps given below to get started
 
@@ -40,5 +37,5 @@ We have created an in-depth tutorial on how you can create a product catalog app
 [Create a product catalog example app using Razor Pages in ASP.NET Core and Contentstack .NET SDK](https://www.contentstack.com/docs/example-apps/build-product-catalog-example-app-using-razor-pages-in-asp-dotnet-core-and-contentstack-dotnet-sdk)
 
 ## Documentation
- - Visit the Contentstack Documentation [docs](https://www.contentstack.com/docs/)
- - Visit the Contentstack .NET SDK Documentation [docs](https://github.com/contentstack/contentstack-dotnet)
+ - [Visit the Contentstack Documentation](https://www.contentstack.com/docs/)
+ - [Visit the Contentstack .NET SDK Documentation](https://github.com/contentstack/contentstack-dotnet)
