@@ -1,0 +1,26 @@
+﻿@page "{uid}"
+@model DetailsModel
+
+@{
+    ViewData["Title"] = Model.Product.Title;
+}
+
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 single-top-left vcenter">
+                <ul class="slides">
+                    <li data-thumb="@Model.Product.FeaturedImage[0].Url">
+                        <img class="slides-image" src="@Model.Product.FeaturedImage[0].Url" alt="" />
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 single-top-right vcenter">
+                <h3>@Model.Product.Title</h3>
+                <p>@Model.Product.Description</p>
+                <p class="actual-price">$@Model.Product.Price</p>
+            </div>
+        </div>
+    </div>
+</div>
