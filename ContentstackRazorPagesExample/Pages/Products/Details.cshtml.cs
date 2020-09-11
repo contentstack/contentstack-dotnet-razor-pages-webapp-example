@@ -12,19 +12,19 @@ namespace ContentstackRazorPagesExample.Pages.Products
 
         [BindProperty]
         public Product Product { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string Uid { get; set; }
 
         public DetailsModel(ContentstackClient client)
         {
             _client = client;
         }
 
-        public async Task OnGetAsync(string uid)
+        public async Task OnGetAsync()
         {
             Product = await _client.ContentType(Product.ContentType)
-                .Entry(uid)
+                .Entry(Uid)
                 .Fetch<Product>();
-
-            ViewData["Title"] = Product.Title;
         }
     }
 }
