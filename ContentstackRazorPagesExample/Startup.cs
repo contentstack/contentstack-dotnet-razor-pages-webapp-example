@@ -21,7 +21,7 @@ namespace ContentstackRazorPagesExample
         {
             services.AddContentstack(Configuration);
             services.AddRazorPages().AddRazorPagesOptions(options =>
-                options.Conventions.AddPageRoute("/Products/Index", "")
+                options.Conventions.AddPageRoute("/Products/Index", "{CurrentPage:int?}")
             );
         }
 

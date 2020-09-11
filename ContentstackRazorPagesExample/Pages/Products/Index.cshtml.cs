@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Contentstack.Core;
 using Contentstack.Core.Models;
 using ContentstackRazorPagesExample.Models;
@@ -10,12 +11,14 @@ namespace ContentstackRazorPagesExample.Pages.Products
     public class IndexModel : PageModel
     {
         private readonly ContentstackClient _client;
-        
-        public bool ShowPrevious => CurrentPage > 1;
-        public int CurrentPage = 1;
-        public readonly int Limit = 6;
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
+        public int CurrentPage { get; set; } = 1;
+        public int PageSize { get; set; } = 6;
+        public bool ShowPrevious => CurrentPage > 1;
+        public bool ShowNext => CurrentPage < TotalPages;
+        public int TotalPages => (int) Math.Ceiling(decimal.Divide(Products?.Count ?? 0, PageSize));
+
         public ContentstackCollection<Product> Products { get; set; }
 
         public IndexModel(ContentstackClient client)
@@ -23,17 +26,13 @@ namespace ContentstackRazorPagesExample.Pages.Products
             _client = client;
         }
 
-        public async Task OnGetAsync(int page = 1)
+        public async Task OnGetAsync()
         {
-            ViewData["Title"] = "Home";
-
-            CurrentPage = page;
-
             Products = await _client.ContentType(Product.ContentType)
                 .Query()
                 .IncludeCount()
-                .Limit(Limit)
-                .Skip((CurrentPage - 1) * Limit)
+                .Limit(PageSize)
+                .Skip((CurrentPage - 1) * PageSize)
                 .Find<Product>();
         }
     }

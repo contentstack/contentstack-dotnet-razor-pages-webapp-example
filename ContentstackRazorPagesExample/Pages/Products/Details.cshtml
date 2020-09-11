@@ -1,5 +1,9 @@
-﻿@page
+﻿@page "{uid}"
 @model DetailsModel
+
+@{
+    ViewData["Title"] = Model.Product.Title;
+}
 
 <div class="products">
     <div class="container">
@@ -11,10 +15,11 @@
                     </li>
                 </ul>
             </div>
+
             <div class="col-md-6 single-top-right vcenter">
                 <h3>@Model.Product.Title</h3>
                 <p>@Model.Product.Description</p>
-                <div class="actual-price">$@Model.Product.Price</div>
+                <p class="actual-price">$@Model.Product.Price</p>
             </div>
         </div>
     </div>
