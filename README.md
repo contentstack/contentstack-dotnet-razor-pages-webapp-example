@@ -12,13 +12,15 @@ Contentstack is a headless CMS with an API-first approach that puts content at t
 
 ## Get Started
 
- - To get your app up and running quickly, we have created a sample .NET Product Catalog for this project. You will need to download the code and change the configuration. Download the code using the command given below:
+ - To get your app running quickly, we have created a sample .NET Product Catalog for this project. You will need to download the code and change the configuration. Download the code using the command given below:
  
 ```
 $ git clone https://github.com/contentstack/contentstack-dotnet-razor-pages-webapp-example.git
 ```
   
- - Once you have downloaded the project, add your Contentstack API Key, Delivery Token, and Environment to the application settings. If you're new to Contentstack, follow these links to learn how to find your Stack's [API Key](https://www.contentstack.com/docs/guide/stack#edit-a-stack) and [Delivery Token](https://www.contentstack.com/docs/guide/tokens#create-a-delivery-token). Also consider reading more about [Environments](https://www.contentstack.com/docs/guide/environments)).
+ - Once you have downloaded the project, Create a new Stack, add your Contentstack API Key, Delivery Token, and Environment to the application settings. If you're new to Contentstack, follow these links to learn how to find your Stack's [API Key](https://www.contentstack.com/docs/guide/stack#edit-a-stack) and [Delivery Token](https://www.contentstack.com/docs/guide/tokens#create-a-delivery-token). Also consider reading more about [Environments](https://www.contentstack.com/docs/guide/environments).
+
+- Extract the contents of `ContentTypes.zip` and import `products.json` into the stack created above. Publish several product entries to the environment created above.
 
  - Open ```ContentstackRazorPagesExample/appsettings.json``` and insert your credentials, so it looks like this:
 ```json
