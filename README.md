@@ -1,3 +1,5 @@
+![.NET Core](https://github.com/contentstack/contentstack-dotnet-razor-pages-webapp-example/workflows/.NET%20Core/badge.svg)
+
 [![Contentstack](https://www.contentstack.com/docs/static/images/contentstack.png)](https://www.contentstack.com/)
 
 ## About this Example
