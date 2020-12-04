@@ -39,7 +39,7 @@ $ git clone https://github.com/contentstack/contentstack-dotnet-razor-pages-weba
 You're all set. Now, run the project.
 
 ## Tutorial
-We've also created a guide that further explains this project. [Click here](https://www.contentstack.com/docs/example-apps/build-product-catalog-example-app-using-razor-pages-in-asp-dotnet-core-and-contentstack-dotnet-sdk)
+We've also created a guide that further explains this project. [Click here](https://www.contentstack.com/docs/developers/sample-apps/build-a-product-catalog-website-using-asp-net-razor-pages-and-contentstack-net-sdk/)
 to learn more.
 
 ## Additional Documentation
