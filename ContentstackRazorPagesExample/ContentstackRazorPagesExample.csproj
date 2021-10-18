@@ -6,8 +6,9 @@
     <AssemblyName>ContentstackRazorPagesExample</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'contentstack_dotnet_razor_pages_webapp_example' " />
   <ItemGroup>
-    <PackageReference Include="contentstack.csharp" Version="2.4.0" />
+    <PackageReference Include="contentstack.csharp" Version="2.6.2" />
     <PackageReference Include="contentstack.aspnetcore" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
